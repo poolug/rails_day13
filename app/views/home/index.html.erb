@@ -1,0 +1,8 @@
+<%	 if logged_in? %>
+    <h1> wena llegaste 	 <%= current_user.email %> </h1>
+    <%=link_to 'Cerrar sesion', session_path(current_user.id),
+    method: :delete%>
+<% else %>
+    <h1>eMail no registrado, hazlo aqui</h1>
+    <%= link_to 'registrarte', users_sign_up_path %>
+<% end %>
